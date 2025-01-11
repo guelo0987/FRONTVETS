@@ -12,10 +12,15 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-green-200 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 to-green-200 p-4">
+      <div className="text-center mb-8">
+        <h1 className="text-5xl font-bold text-green-600 mb-2">VetCare</h1>
+        <p className="text-xl text-gray-600">Tu clínica veterinaria de confianza</p>
+      </div>
+
       <div className="w-full max-w-sm space-y-6 bg-white rounded-lg p-8 shadow-lg">
         <div className="space-y-2 text-center">
-          <h1 className="text-3xl font-bold tracking-tighter text-gray-900">Inicia sesión en tu cuenta</h1>
+          <h2 className="text-2xl font-bold tracking-tighter text-gray-900">Inicia sesión en tu cuenta</h2>
         </div>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-2">

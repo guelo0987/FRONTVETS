@@ -6,6 +6,8 @@ import HomePage from './Pages/HomePage.jsx'
 import ServiciosPage from './Pages/ServiciosPage.jsx'
 import CitaPage from './Pages/CitaPage.jsx'
 import PagoPage from './Pages/PagoPage.jsx'
+import ContactoPage from './Pages/ContactoPage.jsx'
+import PerfilPage from './Pages/PerfilPage.jsx'
 import './App.css'
 
 function App() {
@@ -15,17 +17,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/app" element={
-          <>
-            <h1>Bienvenido a la aplicación</h1>
-            <button onClick={() => setCount(count + 1)}>Contador: {count}</button>
-          </>
-        } />
+      
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/servicios" element={<ServiciosPage />} />
         <Route path="/cita" element={<CitaPage />} />
         <Route path="/pago" element={<PagoPage />} />
+        <Route path="/contacto" element={<ContactoPage />} />
+        <Route path="/perfil" element={<PerfilPage />} />
       </Routes>
     </Router>
   )
