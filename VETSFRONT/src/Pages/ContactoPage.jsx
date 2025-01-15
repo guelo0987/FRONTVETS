@@ -4,8 +4,8 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 
 const ubicacion = {
-  lat: -12.0464, // Reemplaza con tu latitud real
-  lng: -77.0428  // Reemplaza con tu longitud real
+  lat: -12.046374, // Coordenada real de Lima
+  lng: -77.042793  // Coordenada real de Lima
 }
 
 const mapStyles = {
@@ -20,6 +20,7 @@ export default function ContactoPage() {
     asunto: '',
     mensaje: ''
   })
+  const [mensajeEnviado, setMensajeEnviado] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -32,6 +33,18 @@ export default function ContactoPage() {
     e.preventDefault()
     // Aquí iría la lógica para enviar el formulario
     console.log('Formulario enviado:', formData)
+    setMensajeEnviado(true)
+    // Limpiar el formulario
+    setFormData({
+      nombre: '',
+      email: '',
+      asunto: '',
+      mensaje: ''
+    })
+    // Ocultar el mensaje después de 5 segundos
+    setTimeout(() => {
+      setMensajeEnviado(false)
+    }, 5000)
   }
 
   return (
@@ -47,6 +60,25 @@ export default function ContactoPage() {
           </div>
         </div>
       </div>
+
+      {mensajeEnviado && (
+        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 bg-green-100 border border-green-400 text-green-700 px-8 py-4 rounded-md shadow-lg z-50 flex items-center space-x-2">
+          <svg 
+            className="h-6 w-6 text-green-500" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <span>¡Gracias por contactarnos! Te responderemos pronto.</span>
+        </div>
+      )}
 
       {/* Información de Contacto y Mapa */}
       <div className="py-16">
@@ -168,7 +200,7 @@ export default function ContactoPage() {
             {/* Mapa */}
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-gray-900">Nuestra Ubicación</h2>
-              <LoadScript googleMapsApiKey="TU_API_KEY_AQUI">
+              <LoadScript googleMapsApiKey="AIzaSyA5mjCwx1TRLuBAjwQw84WE6h5ErSe7Uj8">
                 <GoogleMap
                   mapContainerStyle={mapStyles}
                   zoom={15}
