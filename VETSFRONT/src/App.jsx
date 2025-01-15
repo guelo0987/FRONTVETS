@@ -8,6 +8,7 @@ import CitaPage from './Pages/CitaPage.jsx'
 import PagoPage from './Pages/PagoPage.jsx'
 import ContactoPage from './Pages/ContactoPage.jsx'
 import PerfilPage from './Pages/PerfilPage.jsx'
+import ForgotPasswordPage from './Pages/ForgotPasswordPage.jsx'
 import './App.css'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/pago" element={<PagoPage />} />
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/perfil" element={<PerfilPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Routes>
     </Router>
   )
